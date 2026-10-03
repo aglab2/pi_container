@@ -11,6 +11,7 @@ docker run \
     --add-host=host.docker.internal:host-gateway \
     -v ${WORKSPACE}:/workspace \
     -v ${PWD}/pi:/pi \
+    -v ${PWD}/cargo:/opt/cargo/registry \
     -v /run/media/admin/Data/winn64libs/sdk:/sdk \
     --rm -it \
     pi
