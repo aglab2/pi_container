@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     cmake \
     ripgrep \
     fd-find \
+    mingw-w64 \
     && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production
@@ -29,6 +30,7 @@ ENV CARGO_HOME=/opt/cargo
 RUN npm install -g @earendil-works/pi-coding-agent
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
+RUN /opt/cargo/bin/rustup target add x86_64-pc-windows-gnu
 
 RUN mkdir -p /pi /workspace /opt/cargo/registry
 WORKDIR /workspace

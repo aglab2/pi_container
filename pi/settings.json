@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.0.0",
+  "lastChangelogVersion": "1.0.1",
   "theme": "light",
   "defaultProvider": "unsloth-studio",
   "defaultModel": "unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q4_K_XL"
