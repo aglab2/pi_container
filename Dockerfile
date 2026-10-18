@@ -19,6 +19,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ripgrep \
     fd-find \
     mingw-w64 \
+    ninja-build \
+    pkg-config \
+    libobs-dev \
+    libglib2.0-dev \
+    libgstreamer1.0-dev \
+    libgstreamer-plugins-base1.0-dev \
+    libjson-glib-dev \
     && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production
