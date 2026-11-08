@@ -26,6 +26,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libgstreamer1.0-dev \
     libgstreamer-plugins-base1.0-dev \
     libjson-glib-dev \
+    libfreetype-dev \
+    libpng-dev \
+    libfontconfig1-dev \
+    clang-format-17 \
+    clang \
+    libpipewire-0.3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production
@@ -42,7 +48,9 @@ RUN /opt/cargo/bin/rustup target add x86_64-pc-windows-gnu
 RUN mkdir -p /pi /workspace /opt/cargo/registry
 WORKDIR /workspace
 
-ENV PATH=/opt/cargo/bin:$PATH
+RUN ln -s /usr/lib/x86_64-linux-gnu/glib-2.0 /usr/lib/glib-2.0
+
+ENV PATH=/opt/cargo/bin:/sdk/bin:$PATH
 
 ENTRYPOINT ["pi"]
 CMD []
